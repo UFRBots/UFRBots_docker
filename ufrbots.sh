@@ -1,2 +1,2 @@
 cd UFRBots-team/ssl-Client
-./main
+sudo ./main

@@ -1,6 +1,9 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 # Dependencias
+ENV TZ=America/Recife
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN apt-get update && apt-get install -y \
     build-essential \
     cmake \
@@ -11,4 +14,10 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean
 
 RUN cd /home && \
-    git clone https://github.com/UFRBots/UFRBots-Team.git
+    git clone https://github.com/UFRBots/UFRBots-Team.git && \
+    sleep 5 && \
+    cd UFRBots-Team
+
+COPY poti.sh /home/
+
+WORKDIR /home
