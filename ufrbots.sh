@@ -1,3 +1,3 @@
-cd UFRBots-team/
-cd ssl-Client/
+cd UFRBots-Team
+cd ssl-Client
 sudo ./main
