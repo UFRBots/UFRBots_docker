@@ -9,3 +9,6 @@ RUN apt-get update && apt-get install -y \
     sudo \
     protobuf-compiler \
     && apt-get clean
+
+RUN cd /home && \
+    git clone https://github.com/UFRBots/UFRBots-Team.git
