@@ -18,6 +18,6 @@ RUN cd /home && \
     sleep 5 && \
     cd UFRBots-Team
 
-COPY poti.sh /home/
+COPY ufrbots.sh /home/
 
 WORKDIR /home
