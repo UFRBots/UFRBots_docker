@@ -11,12 +11,30 @@ RUN apt-get update && apt-get install -y \
     qt5-default \
     sudo \
     protobuf-compiler \
+    libomniorb4-dev \
+    libprotobuf-dev \
     && apt-get clean
 
 RUN cd /home && \
-    git clone https://github.com/UFRBots/UFRBots-Team.git && \
-    sleep 5 && \
-    cd UFRBots-Team
+    git clone https://github.com/UFRBots/UFRBots-Team.git
+    
+RUN cd /home && \
+    cd UFRBots-Team && \
+    cd ssl-Client && \
+    sudo sh protobuf.sh
+    
+RUN cd /home && \
+    cd UFRBots-Team && \
+    cd ssl-Client && \
+    cd net && \
+    cd pb && \
+    cd proto && \
+    sudo sh compile.sh 
+    
+RUN cd /home && \
+    cd UFRBots-Team && \
+    cd ssl-Client && \
+    make
 
 COPY ufrbots.sh /home/
 
