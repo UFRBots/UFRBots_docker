@@ -16,24 +16,17 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean
 
 RUN cd /home && \
-    git clone https://github.com/UFRBots/UFRBots-Team.git
+    git clone https://github.com/UFRBots/UFRBots-Team2021.git
     
 RUN cd /home && \
-    cd UFRBots-Team && \
-    cd ssl-Client && \
-    sudo sh protobuf.sh
+    cd UFRBots-Team2021 && \
+    mkdir build && \
+    cd build && \
+    sudo qmake ..
     
 RUN cd /home && \
-    cd UFRBots-Team && \
-    cd ssl-Client && \
-    cd net && \
-    cd pb && \
-    cd proto && \
-    sudo sh compile.sh 
-    
-RUN cd /home && \
-    cd UFRBots-Team && \
-    cd ssl-Client && \
+    cd UFRBots-Team2021 && \
+    cd build && \
     make
 
 COPY ufrbots.sh /home/
