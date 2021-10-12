@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install -y \
     cmake \
     git \
     qt5-default \
-    sudo \
     protobuf-compiler \
     libomniorb4-dev \
     libprotobuf-dev \
@@ -21,7 +20,7 @@ RUN cd /home && \
 RUN cd /home && \
     cd UFRBots-Team && \
     cd ssl-Client && \
-    sudo sh protobuf.sh
+    sh protobuf.sh
     
 RUN cd /home && \
     cd UFRBots-Team && \
@@ -29,7 +28,7 @@ RUN cd /home && \
     cd net && \
     cd pb && \
     cd proto && \
-    sudo sh compile.sh 
+    sh compile.sh 
     
 RUN cd /home && \
     cd UFRBots-Team && \
