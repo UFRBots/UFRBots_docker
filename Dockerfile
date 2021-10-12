@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install -y \
     cmake \
     git \
     qt5-default \
-    sudo \
     protobuf-compiler \
     libomniorb4-dev \
     libprotobuf-dev \
@@ -22,7 +21,7 @@ RUN cd /home && \
     cd UFRBots-Team2021 && \
     mkdir build && \
     cd build && \
-    sudo qmake ..
+    qmake ..
     
 RUN cd /home && \
     cd UFRBots-Team2021 && \
